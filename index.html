@@ -240,7 +240,15 @@
         }
         
         .english-mode .detail-item {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .english-mode .detail-icon {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .english-mode .map-link {
+            font-family: 'Poppins', sans-serif;
         }
         
         .action-section {
@@ -702,7 +710,7 @@
 
     <!-- Registration Modal -->
     <div id="registrationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; overflow-y: auto;">
-        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; border: 3px solid var(--gold); margin: 20px auto;">
+        <div style="background: white; padding: 20px; border-radius: 10px; max-width: 600px; width: 90%; border: 3px solid var(--gold); margin: 20px auto; max-height: 90vh; overflow-y: auto;">
             <h3 style="color: var(--deep-red); margin-bottom: 20px; text-align: center; font-size: 1.5em;"
                 data-kh="ទម្រង់ចុះឈ្មោះ" 
                 data-en="Registration Form">ទម្រង់ចុះឈ្មោះ</h3>
@@ -788,7 +796,7 @@
                                    onclick="document.querySelector('input[name=companion][value=alone]').checked=true; updateGuestCount(); highlightCompanionChoice(this)">
                                 <div style="font-size: 2.5em; margin-bottom: 10px;">👤</div>
                                 <input type="radio" name="companion" value="alone" checked onchange="updateGuestCount()" style="display: none;">
-                                <span data-kh="មកម្នាក់ឯក" data-en="Come alone" style="font-weight: bold; display: block; margin-top: 5px;">មកម្នាក់ឯក</span>
+                                <span data-kh="មកម្នាក់ឯង" data-en="Come alone" style="font-weight: bold; display: block; margin-top: 5px;">មកម្នាក់ឯង</span>
                                 <span style="font-size: 0.9em; color: var(--dark-brown); display: block; margin-top: 5px;" 
                                       data-kh="ចុះឈ្មោះសម្រាប់តែខ្លួនឯង" 
                                       data-en="Register just for yourself">ចុះឈ្មោះសម្រាប់តែខ្លួនឯង</span>
@@ -841,7 +849,7 @@
             </div>
             
             <!-- Form Navigation Buttons -->
-            <div style="display: flex; gap: 15px; justify-content: space-between; margin-top: 30px;">
+            <div style="display: flex; gap: 15px; justify-content: space-between; margin-top: 30px; position: sticky; bottom: 0; padding: 10px 0;">
                 <button class="khmer-button" onclick="closeRegistrationForm()" style="background: var(--dark-brown); flex: 1;"
                         data-kh="បោះបង់" 
                         data-en="Cancel">បោះបង់</button>
@@ -1124,6 +1132,12 @@
             
             if (guests.length > 0) {
                 guestList.style.display = 'block';
+                // Update guest list title based on language
+                const title = guestList.querySelector('h4');
+                if (title) {
+                    title.textContent = isEnglish ? 'Guest List' : 'បញ្ជីអ្នកចូលរួម';
+                }
+                
                 // Create a reversed copy of the array for display
                 const reversedGuests = [...guests].reverse();
                 guestItems.innerHTML = reversedGuests.map((guest, index) => {
@@ -1141,7 +1155,7 @@
                                     (guest.count > 1 ? 'នាក់' : 'នាក់')} • 
                                 ${isEnglish ? 
                                     (guest.companion === 'alone' ? 'Alone' : 'With companion') : 
-                                    (guest.companion === 'alone' ? 'មកម្នាក់ឯក' : 'មកជាមួយដៃគូ')}` : 
+                                    (guest.companion === 'alone' ? 'មកម្នាក់ឯង' : 'មកជាមួយដៃគូ')}` : 
                                 ''}
                         </small>
                     </div>`;
@@ -1150,6 +1164,23 @@
                 guestList.style.display = 'none';
             }
         }
+        
+        // Update language switching to refresh guest list
+        document.getElementById('khmerBtn').addEventListener('click', () => {
+            document.body.classList.remove('english-mode');
+            updateLanguage('kh');
+            document.getElementById('khmerBtn').classList.add('active');
+            document.getElementById('englishBtn').classList.remove('active');
+            displayGuestList(); // Refresh guest list display
+        });
+        
+        document.getElementById('englishBtn').addEventListener('click', () => {
+            document.body.classList.add('english-mode');
+            updateLanguage('en');
+            document.getElementById('englishBtn').classList.add('active');
+            document.getElementById('khmerBtn').classList.remove('active');
+            displayGuestList(); // Refresh guest list display
+        });
         
         function sendToTelegram(data) {
             let message = '';
