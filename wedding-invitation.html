@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>លិខិតអញ្ជើញចូលរួមពិធីអាពាហ៍ពិពាហ៍ | Khmer Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --cream: #F5F5DC;
+            --dark-brown: #5D4037;
+            --light-gold: #F0E68C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF8DC 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: font-family 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        body.english-mode {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .khmer-pattern {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23D4AF37" stroke-width="2" stroke-opacity="0.1"/><circle cx="50" cy="50" r="10" fill="%23D4AF37" fill-opacity="0.1"/></svg>');
+            background-size: 200px;
+            animation: patternMove 30s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
+        }
+        
+        .invitation-container {
+            background: white;
+            border: 8px solid var(--gold);
+            border-image: 
+                linear-gradient(45deg, var(--gold), var(--light-gold), var(--gold)) 1;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+            to { box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
+        }
+        
+        .traditional-border {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: 
+                linear-gradient(90deg, transparent 20%, var(--deep-red) 20%, var(--deep-red) 80%, transparent 80%),
+                linear-gradient(0deg, transparent 20%, var(--deep-red) 20%, var(--deep-red) 80%, transparent 80%);
+            background-size: 100% 4px, 4px 100%;
+            z-index: -1;
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .lang-btn {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            cursor: pointer;
+            font-family: 'Kantumruy Pro', sans-serif;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: var(--deep-red);
+            transform: translateY(-1px);
+        }
+        
+        .lang-btn.active {
+            background: var(--deep-red);
+            transform: scale(1.02);
+        }
+        
+        .header-section {
+            background: linear-gradient(45deg, var(--deep-red), #A52A2A);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '❦';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 2em;
+            color: var(--gold);
+            opacity: 0.3;
+            animation: spin 20s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .header-section::after {
+            content: '❦';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2em;
+            color: var(--gold);
+            opacity: 0.3;
+            animation: spin 20s linear infinite reverse;
+        }
+        
+        .wedding-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .couple-section {
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--cream);
+        }
+        
+        .couple-names {
+            font-size: 3em;
+            color: var(--deep-red);
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+        
+        .groom-name, .bride-name {
+            display: block;
+            position: relative;
+        }
+        
+        .groom-name::before {
+            content: 'កូនកំលោះ';
+            font-size: 0.4em;
+            color: var(--dark-brown);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .english-mode .groom-name::before {
+            content: 'Groom';
+        }
+        
+        .bride-name::before {
+            content: 'កូនក្រមុំ';
+            font-size: 0.4em;
+            color: var(--dark-brown);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .english-mode .bride-name::before {
+            content: 'Bride';
+        }
+        
+        .heart-separator {
+            color: var(--gold);
+            font-size: 2em;
+            margin: 0 20px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .details-section {
+            background: white;
+            padding: 30px;
+            border-top: 3px double var(--gold);
+            border-bottom: 3px double var(--gold);
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        
+        .detail-icon {
+            width: 40px;
+            text-align: center;
+            font-size: 1.5em;
+            color: var(--deep-red);
+            margin-right: 15px;
+        }
+        
+        .english-mode .detail-item {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .english-mode .detail-icon {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .english-mode .map-link {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .action-section {
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(45deg, var(--cream), white);
+        }
+        
+        .khmer-button {
+            background: linear-gradient(45deg, var(--deep-red), #A52A2A);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Kantumruy Pro', sans-serif;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .khmer-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .khmer-button:hover::after {
+            transform: scale(1);
+        }
+        
+        .english-mode .khmer-button {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .khmer-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+            background: linear-gradient(45deg, #A52A2A, var(--deep-red));
+        }
+        
+        .khmer-button:active {
+            transform: translateY(1px);
+        }
+        
+        .guest-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+            border: 1px solid var(--gold);
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(245, 245, 220, 0.3);
+        }
+        
+        .guest-item {
+            padding: 8px;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            transition: background 0.3s ease;
+        }
+        
+        .guest-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            opacity: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark-brown);
+            font-weight: 600;
+        }
+        
+        .english-mode .form-label {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            font-family: 'Kantumruy Pro';
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--deep-red);
+            box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
+        }
+        
+        .english-mode .form-input {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            height: 80px;
+            font-family: 'Kantumruy Pro';
+            transition: all 0.3s ease;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--deep-red);
+            box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
+        }
+        
+        .english-mode .form-textarea {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            font-family: 'Kantumruy Pro';
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: var(--deep-red);
+            box-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
+        }
+        
+        .english-mode .form-select {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .english-mode .radio-option {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .companion-group {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--gold);
+        }
+        
+        .companion-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .companion-option input[type="radio"] {
+            accent-color: var(--deep-red);
+        }
+        
+        .guest-count-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .guest-count-label {
+            white-space: nowrap;
+        }
+        
+        .map-link {
+            color: var(--deep-red);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 5px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .map-link:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2em;
+            }
+            
+            .wedding-title {
+                font-size: 2em;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* Mobile form optimizations */
+            .form-input, .form-select, .form-textarea {
+                font-size: 1em;
+                padding: 12px;
+            }
+
+            .form-label {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+
+            .khmer-button {
+                padding: 14px;
+                font-size: 1.2em;
+            }
+
+            .detail-item {
+                font-size: 1.1em;
+            }
+
+            .detail-icon {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 1.8em;
+            }
+
+            .wedding-title {
+                font-size: 1.8em;
+            }
+
+            .header-section {
+                padding: 20px;
+            }
+
+            .couple-section {
+                padding: 30px 15px;
+            }
+
+            .details-section {
+                padding: 20px;
+            }
+
+            .action-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="khmer-pattern">
+    <div class="invitation-container">
+        <div class="traditional-border"></div>
+        
+        <div class="language-switcher">
+            <button class="lang-btn active" id="khmerBtn">ភាសាខ្មែរ</button>
+            <button class="lang-btn" id="englishBtn">English</button>
+        </div>
+        
+        <div class="header-section">
+            <h1 class="wedding-title" data-kh="លិខិតអញ្ជើញចូលរួមពិធីអាពាហ៍ពិពាហ៍" data-en="Wedding Invitation">លិខិតអញ្ជើញចូលរួមពិធីអាពាហ៍ពិពាហ៍</h1>
+            <p data-kh="គោរពចំពោះញាតិមិត្ត អ្នកឧញ្ញ៉ាត់ និងមិត្តភក្តិទាំងឡាយ" 
+               data-en="Respectfully inviting relatives, distinguished guests and all friends">
+                គោរពចំពោះញាតិមិត្ត អ្នកឧញ្ញ៉ាត់ និងមិត្តភក្តិទាំងឡាយ
+            </p>
+        </div>
+        
+        <div class="couple-section">
+            <div class="couple-names">
+                <span class="groom-name" data-kh="ទួន សុវណ្ណរាជ" data-en="TOUN SOVANREACH">ទួន សុវណ្ណរាជ</span>
+                <span class="heart-separator">💕</span>
+                <span class="bride-name" data-kh="ភាព លំអង" data-en="PHEAP LOMORNG">ភាព លំអង</span>
+            </div>
+            <p style="color: var(--dark-brown); font-size: 1.2em; margin-top: 10px;"
+               data-kh="សូមទទួលនូវសេចក្តីអំណារ និងសុភមង្គលរបស់ពួកយើង"
+               data-en="We joyfully invite you to share in our happiness">
+                សូមទទួលនូវសេចក្តីអំណារ និងសុភមង្គលរបស់ពួកយើង
+            </p>
+        </div>
+        
+        <div class="details-section">
+            <div class="detail-item">
+                <div class="detail-icon">📅</div>
+                <div>
+                    <strong data-kh="ថ្ងៃទី២៨ ខែធ្នូ ឆ្នាំ២០២៥" 
+                            data-en="December 28, 2025" 
+                            style="cursor: pointer; text-decoration: underline;"
+                            onclick="addToCalendar()">ថ្ងៃទី២៨ ខែធ្នូ ឆ្នាំ២០២៥</strong>
+                    <span style="font-size: 0.8em; margin-left: 5px; color: var(--gold);"
+                          data-kh="(ចុចដើម្បីបញ្ចូលកាលវិភាគ)" 
+                          data-en="(Click to add to calendar)">(ចុចដើម្បីបញ្ចូលកាលវិភាគ)</span><br>
+                    <span data-kh="ថ្ងៃអាទិត្យ ម៉ោង ០៥:០០ ល្ងាច" 
+                          data-en="Sunday, 05:00 PM">ថ្ងៃអាទិត្យ ម៉ោង ០៥:០០ ល្ងាច</span>
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <div class="detail-icon">🏯</div>
+                <div>
+                    <strong data-kh="ខេត្ត កំពង់ស្ពឺ" 
+                            data-en="Kampong Speu Province">ខេត្ត កំពង់ស្ពឺ</strong><br>
+                    <span data-kh="ផ្ទះខាងស្រី" 
+                          data-en="Bride's House">ផ្ទះខាងស្រី</span>
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <div class="detail-icon">👑</div>
+                <div>
+                    <strong data-kh="ពិធីខាន់ស្លា និងពិធីមង្គលការ" 
+                            data-en="Traditional Khmer Ceremony">ពិធីខាន់ស្លា និងពិធីមង្គលការ</strong><br>
+                    <span data-kh="តាមបែបប្រពៃណីខ្មែរ" 
+                          data-en="Following Khmer traditions">តាមបែបប្រពៃណីខ្មែរ</span>
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <div class="detail-icon">📍</div>
+                <div>
+                    <strong data-kh="អាសយដ្ឋាន" data-en="Address">អាសយដ្ឋាន</strong><br>
+                    <span data-kh="ភូមិ ច្រាមត្បូង ឃុំ ព្រះនិព្វាន ស្រុក គងពិសី ខេត្ត កំពង់ស្ពឺ" 
+                          data-en="Village: Chram Tboung, Commune: Preah Nipean, District: Kong Pisei, Province: Kampong Speu">
+                        ភូមិ ច្រាមត្បូង ឃុំ ព្រះនិព្វាន ស្រុក គងពិសី ខេត្ត កំពង់ស្ពឺ
+                    </span>
+                    <br>
+                    <a href="https://maps.app.goo.gl/QH7eAXZZgYoGr7We8" target="_blank" class="map-link" 
+                       data-kh="(សូមមើលផែនទី)" 
+                       data-en="(View Map)">(សូមមើលផែនទី)</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-section">
+            <h3 style="color: var(--deep-red); margin-bottom: 20px;"
+                data-kh="សូមបញ្ជាក់ការចូលរួម" 
+                data-en="RSVP Confirmation">សូមបញ្ជាក់ការចូលរួម</h3>
+            
+            <button class="khmer-button" onclick="showRegistrationForm()" 
+                    data-kh="ចុះឈ្មោះចូលរួម" 
+                    data-en="Register Attendance">ចុះឈ្មោះចូលរួម</button>
+                    
+            <button class="khmer-button" onclick="sendBlessings()" 
+                    data-kh="ផ្ញើពរជ័យ" 
+                    data-en="Send Blessings">ផ្ញើពរជ័យ</button>
+            
+            <div id="guestList" class="guest-list" style="display: none;">
+                <h4 data-kh="បញ្ជីអ្នកចូលរួម" 
+                    data-en="Guest List">បញ្ជីអ្នកចូលរួម</h4>
+                <div id="guestItems"></div>
+            </div>
+            
+            <div id="responseMessage" style="margin-top: 20px; min-height: 40px;"></div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed var(--gold);">
+                <h4 style="color: var(--deep-red); margin-bottom: 10px;"
+                    data-kh="ម្ចាស់ដើមកា" 
+                    data-en="Original Owner">ម្ចាស់ដើមកា</h4>
+                <p style="margin-bottom: 5px;"
+                   data-kh="សម្រាប់ព័ត៌មានបន្ថែម សូមទាក់ទង៖" 
+                   data-en="For more information, please contact:">
+                   សម្រាប់ព័ត៌មានបន្ថែម សូមទាក់ទង៖
+                </p>
+                <div style="display: flex; gap: 30px; margin-top: 15px;">
+                    <!-- Groom Contact -->
+                    <div style="flex: 1; background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 8px; border: 1px solid var(--gold);">
+                        <h4 style="color: var(--deep-red); margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"
+                            data-kh="កូនកំលោះ" 
+                            data-en="Groom">
+                            <span>👨</span>
+                            <span>កូនកំលោះ</span>
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <span>📞</span>
+                                <a href="tel:+855714111167" style="color: var(--deep-red); text-decoration: none; transition: color 0.3s;"
+                                   onmouseover="this.style.color='var(--gold)'" 
+                                   onmouseout="this.style.color='var(--deep-red)'">
+                                    +855 71 411 1167
+                                </a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <span>✈️</span>
+                                <a href="https://t.me/T_Reach" target="_blank" style="color: var(--deep-red); text-decoration: none; transition: color 0.3s;"
+                                   onmouseover="this.style.color='var(--gold)'" 
+                                   onmouseout="this.style.color='var(--deep-red)'">
+                                    @T_Reach
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bride Contact -->
+                    <div style="flex: 1; background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 8px; border: 1px solid var(--gold);">
+                        <h4 style="color: var(--deep-red); margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"
+                            data-kh="កូនក្រមុំ" 
+                            data-en="Bride">
+                            <span>👩</span>
+                            <span>កូនក្រមុំ</span>
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <span>📞</span>
+                                <a href="tel:+855969756905" style="color: var(--deep-red); text-decoration: none; transition: color 0.3s;"
+                                   onmouseover="this.style.color='var(--gold)'" 
+                                   onmouseout="this.style.color='var(--deep-red)'">
+                                    +855 96 975 6905
+                                </a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <span>✈️</span>
+                                <a href="https://t.me/llomorng" target="_blank" style="color: var(--deep-red); text-decoration: none; transition: color 0.3s;"
+                                   onmouseover="this.style.color='var(--gold)'" 
+                                   onmouseout="this.style.color='var(--deep-red)'">
+                                    @llomorng
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; overflow-y: auto;">
+        <div style="background: white; padding: 20px; border-radius: 10px; max-width: 600px; width: 90%; border: 3px solid var(--gold); margin: 20px auto; max-height: 90vh; overflow-y: auto;">
+            <h3 style="color: var(--deep-red); margin-bottom: 20px; text-align: center; font-size: 1.5em;"
+                data-kh="ទម្រង់ចុះឈ្មោះ" 
+                data-en="Registration Form">ទម្រង់ចុះឈ្មោះ</h3>
+            
+            <!-- Progress Indicator -->
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; position: relative;">
+                <div style="flex: 1; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background: var(--deep-red); color: white; display: flex; justify-content: center; align-items: center; margin: 0 auto;">1</div>
+                    <div style="font-size: 0.8em; margin-top: 5px;" data-kh="ព័ត៌មានផ្ទាល់ខ្លួន" data-en="Personal Info">ព័ត៌មានផ្ទាល់ខ្លួន</div>
+                </div>
+                <div style="flex: 1; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background: var(--gold); color: white; display: flex; justify-content: center; align-items: center; margin: 0 auto;">2</div>
+                    <div style="font-size: 0.8em; margin-top: 5px;" data-kh="ជម្រើសចូលរួម" data-en="Attendance Options">ជម្រើសចូលរួម</div>
+                </div>
+                <div style="flex: 1; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background: var(--dark-brown); color: white; display: flex; justify-content: center; align-items: center; margin: 0 auto;">3</div>
+                    <div style="font-size: 0.8em; margin-top: 5px;" data-kh="បញ្ជាក់" data-en="Confirm">បញ្ជាក់</div>
+                </div>
+                <!-- Progress Bar -->
+                <div style="position: absolute; top: 15px; left: 15%; right: 15%; height: 2px; background: var(--gold); z-index: 1;"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" 
+                       data-kh="ជ្រើសរើសគោត្តនាម" 
+                       data-en="Select Title">ជ្រើសរើសគោត្តនាម</label>
+                <select id="titleSelect" class="form-select" onchange="updatePartnerTitle()">
+                    <option value="" data-kh="សូមជ្រើសរើស" data-en="Please select">សូមជ្រើសរើស</option>
+                    <option value="លោក" data-kh="លោក" data-en="Mr.">លោក</option>
+                    <option value="លោកស្រី" data-kh="លោកស្រី" data-en="Mrs.">លោកស្រី</option>
+                    <option value="ឯកឧត្តម" data-kh="ឯកឧត្តម" data-en="His Excellency">ឯកឧត្តម</option>
+                    <option value="ឧកញ៉ា" data-kh="ឧកញ៉ា" data-en="Your Honor">ឧកញ៉ា</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" 
+                       data-kh="ឈ្មោះពេញ" 
+                       data-en="Full Name">ឈ្មោះពេញ</label>
+                <input type="text" id="guestName" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" 
+                       data-kh="លេខទូរស័ព្ទ" 
+                       data-en="Phone Number">លេខទូរស័ព្ទ</label>
+                <input type="tel" id="guestPhone" class="form-input" placeholder="012 345 678">
+            </div>
+            
+
+            <div class="form-group">
+                <label class="form-label" 
+                       data-kh="តើអ្នកនឹងចូលរួមដែរឬទេ?" 
+                       data-en="Will you be attending?">តើអ្នកនឹងចូលរួមដែរឬទេ?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="attending" value="yes" checked onchange="toggleAttendanceFields(true)">
+                        <span data-kh="បាទ/ចាស ចូលរួម" data-en="Yes, I will attend">បាទ/ចាស ចូលរួម</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="attending" value="no" onchange="toggleAttendanceFields(false)">
+                        <span data-kh="បដិសេធចូលរួម" data-en="No, I cannot attend">បដិសេធចូលរួម</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div id="attendingFields">
+                <!-- Companion Options with Visual Buttons -->
+                <div class="form-group" style="margin-top: 20px; margin-bottom: 25px; border-top: 1px dashed var(--gold); padding-top: 20px;">
+                    <label class="form-label" style="font-size: 1.1em; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;"
+                           data-kh="មកម្នាក់ឯក ឬ មកជាមួយដៃគូ" 
+                           data-en="Come alone or with companion">
+                        <span style="font-size: 1.2em;">👥</span>
+                        <span>មកម្នាក់ឯក ឬ មកជាមួយដៃគូ</span>
+                    </label>
+                    
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <!-- Come Alone Option -->
+                        <div style="flex: 1; min-width: 150px; max-width: 200px;">
+                            <label class="companion-button" style="display: block; text-align: center; padding: 15px; border: 2px solid var(--gold); border-radius: 10px; cursor: pointer; transition: all 0.3s ease; background: white;" 
+                                   onmouseover="this.style.background='rgba(212, 175, 55, 0.1)'" 
+                                   onmouseout="this.style.background='white'" 
+                                   onclick="document.querySelector('input[name=companion][value=alone]').checked=true; updateGuestCount(); highlightCompanionChoice(this)">
+                                <div style="font-size: 2.5em; margin-bottom: 10px;">👤</div>
+                                <input type="radio" name="companion" value="alone" checked onchange="updateGuestCount()" style="display: none;">
+                                <span data-kh="មកម្នាក់ឯង" data-en="Come alone" style="font-weight: bold; display: block; margin-top: 5px;">មកម្នាក់ឯង</span>
+                                <span style="font-size: 0.9em; color: var(--dark-brown); display: block; margin-top: 5px;" 
+                                      data-kh="ចុះឈ្មោះសម្រាប់តែខ្លួនឯង" 
+                                      data-en="Register just for yourself">ចុះឈ្មោះសម្រាប់តែខ្លួនឯង</span>
+                            </label>
+                        </div>
+                        
+                        <!-- With Companion Option -->
+                        <div style="flex: 1; min-width: 150px; max-width: 200px;">
+                            <label class="companion-button" style="display: block; text-align: center; padding: 15px; border: 2px solid var(--gold); border-radius: 10px; cursor: pointer; transition: all 0.3s ease; background: white;" 
+                                   onmouseover="this.style.background='rgba(212, 175, 55, 0.1)'" 
+                                   onmouseout="this.style.background='white'" 
+                                   onclick="document.querySelector('input[name=companion][value=with-companion]').checked=true; updateGuestCount(); highlightCompanionChoice(this)">
+                                <div style="font-size: 2.5em; margin-bottom: 10px;">👫</div>
+                                <input type="radio" name="companion" value="with-companion" onchange="updateGuestCount()" style="display: none;">
+                                <span data-kh="មកជាមួយដៃគូ" data-en="With companion" style="font-weight: bold; display: block; margin-top: 5px;">មកជាមួយដៃគូ</span>
+                                <span style="font-size: 0.9em; color: var(--dark-brown); display: block; margin-top: 5px;" 
+                                      data-kh="ចុះឈ្មោះសម្រាប់អ្នក និងដៃគូ" 
+                                      data-en="Register for you and your partner">ចុះឈ្មោះសម្រាប់អ្នក និងដៃគូ</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="guest-count-container">
+                        <label class="form-label guest-count-label" 
+                               data-kh="ចំនួនមនុស្ស" 
+                               data-en="Number of Guests">ចំនួនមនុស្ស</label>
+                        <input type="number" id="guestCount" value="1" min="1" class="form-input">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" 
+                           data-kh="តើអ្នកជាភ្ញៀវខាងណា?" 
+                           data-en="Which side are you from?">តើអ្នកជាភ្ញៀវខាងណា?</label>
+                    <select id="guestType" class="form-select">
+                        <option value="groom-parents" data-kh="ខាងឪពុកម្ដាយប្រុស" data-en="Groom's parents side">ខាងឪពុកម្ដាយប្រុស</option>
+                        <option value="bride-parents" data-kh="ខាងឪពុកម្ដាយស្រី" data-en="Bride's parents side">ខាងឪពុកម្ដាយស្រី</option>
+                        <option value="general" data-kh="ភ្ញៀវទូទៅ" data-en="General guest">ភ្ញៀវទូទៅ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" 
+                           data-kh="សារជូនពរ (ស្រេចចិត្ត)" 
+                           data-en="Blessing Message (Optional)">សារជូនពរ (ស្រេចចិត្ត)</label>
+                    <textarea id="blessingMessage" class="form-textarea"></textarea>
+                </div>
+            </div>
+            
+            <!-- Form Navigation Buttons -->
+            <div style="display: flex; gap: 15px; justify-content: space-between; margin-top: 30px; position: sticky; bottom: 0; padding: 10px 0;">
+                <button class="khmer-button" onclick="closeRegistrationForm()" style="background: var(--dark-brown); flex: 1;"
+                        data-kh="បោះបង់" 
+                        data-en="Cancel">បោះបង់</button>
+                <button class="khmer-button" onclick="submitRegistration()" style="flex: 2;"
+                        data-kh="ចុះឈ្មោះ" 
+                        data-en="Submit">ចុះឈ្មោះ</button>
+            </div>
+            
+            <!-- Form Instructions -->
+            <div style="margin-top: 20px; font-size: 0.9em; color: var(--dark-brown); text-align: center; padding-top: 15px; border-top: 1px dashed var(--gold);">
+                <p data-kh="សូមបំពេញព័ត៌មានទាំងអស់ដើម្បីបញ្ជាក់ការចូលរួមរបស់អ្នក" 
+                   data-en="Please fill in all information to confirm your attendance">
+                   សូមបំពេញព័ត៌មានទាំងអស់ដើម្បីបញ្ជាក់ការចូលរួមរបស់អ្នក
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Telegram Bot Configuration
+        const TELEGRAM_BOT_TOKEN = '5651460757:AAEgwgzCr5jW1jmHpkqGDA3gUxQpneaZWxg';
+        const TELEGRAM_CHAT_ID = '553809552';
+        
+        // Google Sheets Web App URL (Latest Khmer version)
+        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwycsEb-VBB-g1aVkP07g8bYl3vLISTtEfiLFiDAzYojWp-Tz2lxhcNBtQg4vLVeeQ9/exec';
+        
+        // Partner title mapping
+        const PARTNER_TITLES = {
+            'លោក': 'និង លោកស្រី',
+            'លោកស្រី': 'និង ស្វាមី',
+            'ឯកឧត្តម': 'និង លោកជំទាវ',
+            'ឧកញ៉ា': 'និង លោកជំទាវ'
+        };
+        
+        // Partner title mapping (English)
+        const PARTNER_TITLES_EN = {
+            'លោក': 'and Mrs.',
+            'លោកស្រី': 'and Mr.',
+            'ឯកឧត្តម': 'and Madam',
+            'ឧកញ៉ា': 'and Madam'
+        };
+        
+        // Initialize guest list from localStorage
+        let guests = JSON.parse(localStorage.getItem('weddingGuests')) || [];
+        displayGuestList();
+        
+        // Language switching
+        document.getElementById('khmerBtn').addEventListener('click', () => {
+            document.body.classList.remove('english-mode');
+            updateLanguage('kh');
+            document.getElementById('khmerBtn').classList.add('active');
+            document.getElementById('englishBtn').classList.remove('active');
+        });
+        
+        document.getElementById('englishBtn').addEventListener('click', () => {
+            document.body.classList.add('english-mode');
+            updateLanguage('en');
+            document.getElementById('englishBtn').classList.add('active');
+            document.getElementById('khmerBtn').classList.remove('active');
+        });
+        
+        function updateLanguage(lang) {
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-kh], [data-en]');
+            elements.forEach(el => {
+                if (lang === 'kh') {
+                    el.textContent = el.getAttribute('data-kh') || el.textContent;
+                } else {
+                    el.textContent = el.getAttribute('data-en') || el.textContent;
+                }
+            });
+            
+            // Update select options
+            const options = document.querySelectorAll('#titleSelect option');
+            options.forEach(option => {
+                if (lang === 'kh') {
+                    option.textContent = option.getAttribute('data-kh') || option.textContent;
+                } else {
+                    option.textContent = option.getAttribute('data-en') || option.textContent;
+                }
+            });
+            
+            // Update radio labels
+            const radioLabels = document.querySelectorAll('.radio-option span');
+            radioLabels.forEach(label => {
+                if (lang === 'kh') {
+                    label.textContent = label.getAttribute('data-kh') || label.textContent;
+                } else {
+                    label.textContent = label.getAttribute('data-en') || label.textContent;
+                }
+            });
+            
+            // Update map link text
+            const mapLinks = document.querySelectorAll('.map-link');
+            mapLinks.forEach(link => {
+                if (lang === 'kh') {
+                    link.textContent = link.getAttribute('data-kh') || link.textContent;
+                } else {
+                    link.textContent = link.getAttribute('data-en') || link.textContent;
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('weddingLanguage', lang);
+        }
+        
+        // Load saved language preference
+        const savedLang = localStorage.getItem('weddingLanguage') || 'kh';
+        if (savedLang === 'en') {
+            document.body.classList.add('english-mode');
+            updateLanguage('en');
+            document.getElementById('englishBtn').classList.add('active');
+        } else {
+            document.getElementById('khmerBtn').classList.add('active');
+        }
+        
+        function showRegistrationForm() {
+            document.getElementById('registrationModal').style.display = 'flex';
+            document.getElementById('titleSelect').value = '';
+            document.getElementById('guestName').value = '';
+            document.getElementById('guestCount').value = 1;
+            document.getElementById('blessingMessage').value = '';
+            document.querySelector('input[name="attending"][value="yes"]').checked = true;
+            document.querySelector('input[name="companion"][value="alone"]').checked = true;
+            updateGuestCount();
+            toggleAttendanceFields(true);
+            
+            // Reset companion button styles
+            document.querySelectorAll('.companion-button').forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.borderColor = 'var(--gold)';
+            });
+            
+            // Highlight the default selected companion button (alone)
+            const aloneButton = document.querySelector('.companion-button:first-child');
+            if (aloneButton) {
+                aloneButton.style.background = 'rgba(212, 175, 55, 0.2)';
+                aloneButton.style.borderColor = 'var(--deep-red)';
+            }
+        }
+        
+        function closeRegistrationForm() {
+            document.getElementById('registrationModal').style.display = 'none';
+        }
+        
+        function toggleAttendanceFields(show) {
+            const attendingFields = document.getElementById('attendingFields');
+            attendingFields.style.display = show ? 'block' : 'none';
+        }
+        
+        function updateGuestCount() {
+            const companion = document.querySelector('input[name="companion"]:checked').value;
+            const guestCountInput = document.getElementById('guestCount');
+            
+            if (companion === 'with-companion') {
+                guestCountInput.value = 2;
+                guestCountInput.min = 2;
+            } else {
+                guestCountInput.value = 1;
+                guestCountInput.min = 1;
+            }
+        }
+        
+        function highlightCompanionChoice(element) {
+            // Remove highlight from all companion buttons
+            document.querySelectorAll('.companion-button').forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.borderColor = 'var(--gold)';
+            });
+            
+            // Add highlight to selected button
+            element.style.background = 'rgba(212, 175, 55, 0.2)';
+            element.style.borderColor = 'var(--deep-red)';
+        }
+        
+        function updatePartnerTitle() {
+            const title = document.getElementById('titleSelect').value;
+            if (title && PARTNER_TITLES[title]) {
+                // This function is for future use if needed
+            }
+        }
+        
+        function submitRegistration() {
+            const title = document.getElementById('titleSelect').value;
+            const name = document.getElementById('guestName').value.trim();
+            const phone = document.getElementById('guestPhone').value.trim();
+            const attending = document.querySelector('input[name="attending"]:checked').value === 'yes';
+            const companion = document.querySelector('input[name="companion"]:checked').value;
+            const count = attending ? parseInt(document.getElementById('guestCount').value) : 0;
+            const guestType = document.getElementById('guestType').value;
+            const blessing = attending ? document.getElementById('blessingMessage').value.trim() : '';
+            const isEnglish = document.body.classList.contains('english-mode');
+            const attendanceStatus = attending ? 
+                (isEnglish ? 'Confirmed' : 'បានបញ្ជាក់') : 
+                (isEnglish ? 'Declined' : 'បានបដិសេធ');
+            
+            if (!title) {
+                showMessage(isEnglish ? 'Please select a title' : 'សូមជ្រើសរើសគោត្តនាម', 'error');
+                return;
+            }
+            
+            if (!name) {
+                showMessage(isEnglish ? 'Please enter your name' : 'សូមបញ្ចូលឈ្មោះរបស់អ្នក', 'error');
+                return;
+            }
+            
+            // Generate full name with partner title if applicable
+            let fullName = `${title} ${name}`;
+            if (attending && companion === 'with-companion') {
+                if (isEnglish && PARTNER_TITLES_EN[title]) {
+                    fullName += ` ${PARTNER_TITLES_EN[title]}`;
+                } else if (!isEnglish && PARTNER_TITLES[title]) {
+                    fullName += ` ${PARTNER_TITLES[title]}`;
+                }
+            }
+            
+            const guest = {
+                id: Date.now(),
+                fullName: fullName,
+                phone: phone,
+                attendanceStatus: attendanceStatus,
+                attending: attending,
+                companion: companion,
+                count: count,
+                guestType: guestType,
+                blessing: blessing,
+                timestamp: new Date().toLocaleString(isEnglish ? 'en-US' : 'km-KH'),
+                language: isEnglish ? 'English' : 'Khmer'
+            };
+            
+            guests.push(guest);
+            localStorage.setItem('weddingGuests', JSON.stringify(guests));
+            
+            // Send to Telegram
+            sendToTelegram(guest);
+            
+            // Send to Google Sheets
+            sendToGoogleSheets(guest);
+            
+            const message = attending ? 
+                (isEnglish ? `Thank you ${fullName}! Your registration has been saved.` : 
+                 `សូមអរគុណ ${fullName}! ការចុះឈ្មោះរបស់អ្នកត្រូវបានរក្សាទុក។`) :
+                (isEnglish ? `Thank you ${fullName} for your confirmation.` : 
+                 `សូមអរគុណ ${fullName} សម្រាប់ការបញ្ជាក់។`);
+                
+            showMessage(message, 'success');
+            createConfetti();
+            
+            closeRegistrationForm();
+            displayGuestList();
+        }
+        
+        function sendBlessings() {
+            const isEnglish = document.body.classList.contains('english-mode');
+            const name = prompt(isEnglish ? 'Please enter your name for blessings:' : 'សូមបញ្ចូលឈ្មោះរបស់អ្នកសម្រាប់ផ្ញើពរ:');
+            if (name) {
+                const blessing = prompt(isEnglish ? 'Please enter your blessing message:' : 'សូមផ្ញើពរជ័យរបស់អ្នក:');
+                if (blessing) {
+                    const blessingData = {
+                        name: name,
+                        blessing: blessing,
+                        type: 'blessing',
+                        timestamp: new Date().toLocaleString(isEnglish ? 'en-US' : 'km-KH')
+                    };
+                    
+                    sendToTelegram(blessingData);
+                    sendToGoogleSheets(blessingData);
+                    showMessage(isEnglish ? 
+                        `Thank you ${name} for your blessings! 💕` : 
+                        `សូមអរគុណ ${name} សម្រាប់ពរជ័យរបស់អ្នក! 💕`, 'success');
+                    createConfetti();
+                }
+            }
+        }
+        
+        function displayGuestList() {
+            const guestList = document.getElementById('guestList');
+            const guestItems = document.getElementById('guestItems');
+            const isEnglish = document.body.classList.contains('english-mode');
+            
+            if (guests.length > 0) {
+                guestList.style.display = 'block';
+                // Update guest list title based on language
+                const title = guestList.querySelector('h4');
+                if (title) {
+                    title.textContent = isEnglish ? 'Guest List' : 'បញ្ជីអ្នកចូលរួម';
+                }
+                
+                // Create a reversed copy of the array for display
+                const reversedGuests = [...guests].reverse();
+                guestItems.innerHTML = reversedGuests.map((guest, index) => {
+                    // Calculate original position for numbering
+                    const originalIndex = guests.length - index;
+                    return `<div class="guest-item">
+                        <span>${originalIndex}. ${guest.fullName}</span>
+                        <small>
+                            ${guest.attending ? 
+                                (isEnglish ? '✅ Confirmed' : '✅ បានបញ្ជាក់') : 
+                                (isEnglish ? '❌ Declined' : '❌ បានបដិសេធ')} • 
+                            ${guest.attending ? 
+                                `${guest.count} ${isEnglish ? 
+                                    (guest.count > 1 ? 'guests' : 'guest') : 
+                                    (guest.count > 1 ? 'នាក់' : 'នាក់')} • 
+                                ${isEnglish ? 
+                                    (guest.companion === 'alone' ? 'Alone' : 'With companion') : 
+                                    (guest.companion === 'alone' ? 'មកម្នាក់ឯង' : 'មកជាមួយដៃគូ')}` : 
+                                ''}
+                        </small>
+                    </div>`;
+                }).join('');
+            } else {
+                guestList.style.display = 'none';
+            }
+        }
+        
+        // Update language switching to refresh guest list
+        document.getElementById('khmerBtn').addEventListener('click', () => {
+            document.body.classList.remove('english-mode');
+            updateLanguage('kh');
+            document.getElementById('khmerBtn').classList.add('active');
+            document.getElementById('englishBtn').classList.remove('active');
+            displayGuestList(); // Refresh guest list display
+        });
+        
+        document.getElementById('englishBtn').addEventListener('click', () => {
+            document.body.classList.add('english-mode');
+            updateLanguage('en');
+            document.getElementById('englishBtn').classList.add('active');
+            document.getElementById('khmerBtn').classList.remove('active');
+            displayGuestList(); // Refresh guest list display
+        });
+        
+        function sendToTelegram(data) {
+            let message = '';
+            const isEnglish = document.body.classList.contains('english-mode');
+            
+            if (data.type === 'blessing') {
+                message = isEnglish ?
+                    `🎉 New Blessing!\n\nName: ${data.name}\nBlessing: ${data.blessing}\nTime: ${data.timestamp}` :
+                    `🎉 ពរជ័យថ្មី!\n\nឈ្មោះ: ${data.name}\nពរជ័យ: ${data.blessing}\nពេលវេលា: ${data.timestamp}`;
+            } else {
+                const status = data.attending ? 
+                    (isEnglish ? 
+                        `Attendance: ${data.attendanceStatus}\nCompanion: ${data.companion === 'alone' ? 'Alone' : 'With companion'}\nGuests: ${data.count}\nBlessing: ${data.blessing || 'None'}` : 
+                        `ស្ថានភាព: ${data.attendanceStatus}\nមក: ${data.companion === 'alone' ? 'មកម្នាក់ឯក' : 'មកជាមួយដៃគូរ'}\nចំនួន: ${data.count} នាក់\nពរជ័យ: ${data.blessing || 'មិនមាន'}`) : 
+                    (isEnglish ? `Attendance: ${data.attendanceStatus}\nNot attending` : `ស្ថានភាព: ${data.attendanceStatus}\nមិនចូលរួម`);
+                    
+                message = isEnglish ?
+                    `📝 New Registration!\n\nName: ${data.fullName}\n${status}\nTime: ${data.timestamp}` :
+                    `📝 ការចុះឈ្មោះថ្មី!\n\nឈ្មោះ: ${data.fullName}\n${status}\nពេលវេលា: ${data.timestamp}`;
+            }
+            
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            }).catch(error => console.error('Error sending to Telegram:', error));
+        }
+        
+        function sendToGoogleSheets(data) {
+            if (!GOOGLE_SHEETS_WEB_APP_URL) {
+                console.log('Google Sheets Web App URL not configured');
+                return;
+            }
+            
+            const isEnglish = document.body.classList.contains('english-mode');
+            let sheetData = {};
+            
+            if (data.type === 'blessing') {
+                sheetData = {
+                    type: 'Blessing',
+                    name: data.name,
+                    message: data.blessing,
+                    timestamp: data.timestamp,
+                    language: 'Khmer'
+                };
+            } else {
+                sheetData = {
+                    type: 'Registration',
+                    fullName: data.fullName || '',
+                    phone: data.phone || '',
+                    attendanceStatus: data.attendanceStatus || 'មិនប្រាកដ',
+                    attending: data.attending ? 'ចូលរួម' : 'មិនចូលរួម',
+                    companion: data.companion === 'alone' ? 'ម្នាក់ឯក' : 'ជាមួយដៃគូ',
+                    count: data.count || 0,
+                    guestType: data.guestType || 'ភ្ញៀវទូទៅ',
+                    blessing: data.blessing || '',
+                    timestamp: new Date().toLocaleString('km-KH'),
+                    language: 'Khmer'
+                };
+            }
+            
+            // Try with no-cors mode first
+            fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(sheetData)
+            })
+            .then(() => {
+                console.log('Request attempted (no-cors mode)');
+            })
+            .catch(error => {
+                console.error('Request failed (no-cors mode):', error);
+                const messageDiv = document.getElementById('responseMessage');
+                messageDiv.innerHTML = `
+                    <div style="color: orange; padding: 10px; background: #f8f8f8; border-radius: 5px; text-align: center;">
+                        ${isEnglish ? 
+                            'Your response was saved locally but could not be sent to our server. Please try again later.' : 
+                            'ការឆ្លើយតបរបស់អ្នកត្រូវបានរក្សាទុកក្នុងម៉ាស៊ីនរបស់អ្នក ប៉ុន្តែមិនអាចផ្ញើទៅម៉ាស៊ីនបានទេ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។'}
+                    </div>
+                `;
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 5000);
+            });
+        }
+        
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('responseMessage');
+            messageDiv.innerHTML = `<div style="color: ${type === 'error' ? 'red' : 'green'}; 
+                padding: 10px; background: #f8f8f8; border-radius: 5px; text-align: center; animation: fadeIn 0.5s ease-out;">${text}</div>`;
+            
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+        
+        function createConfetti() {
+            // Confetti effect disabled as per request
+            return;
+        }
+        
+        // Simple anime.js-like animation function
+        const anime = (function() {
+            function updateAnimation(animation) {
+                const now = Date.now();
+                const elapsed = now - animation.startTime;
+                const progress = Math.min(elapsed / animation.duration, 1);
+                
+                const easeProgress = animation.easing(progress);
+                
+                animation.targets.style.transform = `
+                    translateY(${animation.translateY * easeProgress}px)
+                    translateX(${animation.translateX * easeProgress}px)
+                    rotate(${animation.rotate * easeProgress}deg)
+                `;
+                animation.targets.style.opacity = 1 - easeProgress;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(() => updateAnimation(animation));
+                } else {
+                    animation.complete(animation);
+                }
+            }
+            
+            return function(params) {
+                const animation = {
+                    targets: params.targets,
+                    translateY: params.translateY || 0,
+                    translateX: params.translateX || 0,
+                    rotate: params.rotate || 0,
+                    opacity: params.opacity || 1,
+                    duration: params.duration || 1000,
+                    easing: params.easing || (t => t),
+                    complete: params.complete || (() => {}),
+                    startTime: Date.now()
+                };
+                
+                requestAnimationFrame(() => updateAnimation(animation));
+            };
+        })();
+        
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeRegistrationForm();
+            }
+        });
+
+        // Enhanced Calendar Integration
+        function addToCalendar() {
+            const isEnglish = document.body.classList.contains('english-mode');
+            const eventTitle = isEnglish ? 
+                "Wedding of Toun Sovanreach & Pheap Lomorng" : 
+                "ពិធីអាពាហ៍ពិពាហ៍ លោក ទួន សុវណ្ណរាជ និង លោកស្រី ភាព លំអង";
+            
+            const eventDescription = isEnglish ?
+                "Traditional Khmer wedding ceremony" :
+                "ពិធីអាពាហ៍ពិពាហ៍បែបប្រពៃណីខ្មែរ";
+            
+            const eventLocation = isEnglish ?
+                "Bride's House, Kampong Speu Province, Cambodia" :
+                "ផ្ទះខាងស្រី, ខេត្តកំពង់ស្ពឺ, កម្ពុជា";
+            
+            // Event date: December 28, 2025 at 5:00 PM Cambodia Time (UTC+7)
+            const startDate = new Date('2025-12-28T17:00:00+07:00');
+            const endDate = new Date('2025-12-28T23:00:00+07:00');
+
+            // Create modal for calendar options
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '10000';
+            
+            const content = document.createElement('div');
+            content.style.backgroundColor = 'white';
+            content.style.padding = '30px';
+            content.style.borderRadius = '10px';
+            content.style.maxWidth = '500px';
+            content.style.width = '90%';
+            content.style.border = '3px solid var(--gold)';
+            
+            const title = document.createElement('h3');
+            title.textContent = isEnglish ? 'Add to Calendar' : 'បញ្ចូលទៅក្នុងប្រតិទិន';
+            title.style.color = 'var(--deep-red)';
+            title.style.marginBottom = '20px';
+            title.style.textAlign = 'center';
+            
+            const options = [
+                {
+                    name: isEnglish ? 'Device Calendar' : 'ប្រតិទិនឧបករណ៍',
+                    icon: '📱',
+                    action: () => addToNativeCalendar(eventTitle, eventDescription, eventLocation, startDate, endDate)
+                },
+                {
+                    name: isEnglish ? 'Google Calendar' : 'Google Calendar',
+                    icon: '📅',
+                    action: () => {
+                        const url = `https://www.google.com/calendar/render?action=TEMPLATE` +
+                            `&text=${encodeURIComponent(eventTitle)}` +
+                            `&dates=${startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}` +
+                            `/${endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}` +
+                            `&details=${encodeURIComponent(eventDescription)}` +
+                            `&location=${encodeURIComponent(eventLocation)}` +
+                            `&sf=true&output=xml`;
+                        window.open(url, '_blank');
+                    }
+                },
+                {
+                    name: isEnglish ? 'Download iCal' : 'ទាញយក iCal',
+                    icon: '📥',
+                    action: () => {
+                        const icsContent = [
+                            'BEGIN:VCALENDAR',
+                            'VERSION:2.0',
+                            'BEGIN:VEVENT',
+                            `DTSTART:${startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}`,
+                            `DTEND:${endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}`,
+                            `SUMMARY:${eventTitle}`,
+                            `DESCRIPTION:${eventDescription}`,
+                            `LOCATION:${eventLocation}`,
+                            'END:VEVENT',
+                            'END:VCALENDAR'
+                        ].join('\n');
+                        
+                        const blob = new Blob([icsContent], { type: 'text/calendar' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'KhmerWedding.ics';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
+                }
+            ];
+            
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.style.display = 'flex';
+                button.style.alignItems = 'center';
+                button.style.gap = '10px';
+                button.style.padding = '15px';
+                button.style.margin = '10px 0';
+                button.style.width = '100%';
+                button.style.border = 'none';
+                button.style.borderRadius = '8px';
+                button.style.background = 'var(--cream)';
+                button.style.cursor = 'pointer';
+                button.style.transition = 'all 0.3s';
+                
+                button.onmouseover = () => button.style.background = 'rgba(212, 175, 55, 0.2)';
+                button.onmouseout = () => button.style.background = 'var(--cream)';
+                button.onclick = () => {
+                    option.action();
+                    document.body.removeChild(modal);
+                };
+                
+                const icon = document.createElement('span');
+                icon.textContent = option.icon;
+                icon.style.fontSize = '1.5em';
+                
+                const text = document.createElement('span');
+                text.textContent = option.name;
+                
+                button.appendChild(icon);
+                button.appendChild(text);
+                content.appendChild(button);
+            });
+            
+            const closeButton = document.createElement('button');
+            closeButton.textContent = isEnglish ? 'Cancel' : 'បោះបង់';
+            closeButton.style.display = 'block';
+            closeButton.style.margin = '20px auto 0';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.background = 'var(--dark-brown)';
+            closeButton.style.color = 'white';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+            
+            content.appendChild(title);
+            content.appendChild(closeButton);
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+        }
+        
+        // Native Calendar Integration
+        function addToNativeCalendar(title, description, location, startDate, endDate) {
+            // Check if device is iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            
+            // Check if device is Android
+            const isAndroid = /Android|android/.test(navigator.userAgent);
+            
+            // iOS devices (including iPad)
+            if (isIOS) {
+                try {
+                    // Create ICS file for iOS
+                    const icsContent = [
+                        'BEGIN:VCALENDAR',
+                        'VERSION:2.0',
+                        'BEGIN:VEVENT',
+                        `DTSTART:${startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}`,
+                        `DTEND:${endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}`,
+                        `SUMMARY:${title}`,
+                        `DESCRIPTION:${description}`,
+                        `LOCATION:${location}`,
+                        'END:VEVENT',
+                        'END:VCALENDAR'
+                    ].join('\n');
+                    
+                    const blob = new Blob([icsContent], { type: 'text/calendar' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    // Create hidden anchor to trigger download
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    // Clean up
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                    }, 100);
+                    
+                } catch (error) {
+                    console.error('iOS calendar error:', error);
+                    fallbackCalendar();
+                }
+            } 
+            // Android devices
+            else if (isAndroid) {
+                try {
+                    // Android intent for calendar
+                    const intentUrl = `https://www.google.com/calendar/render?action=TEMPLATE` +
+                        `&text=${encodeURIComponent(title)}` +
+                        `&dates=${startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}` +
+                        `/${endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')}` +
+                        `&details=${encodeURIComponent(description)}` +
+                        `&location=${encodeURIComponent(location)}` +
+                        `&sf=true&output=xml`;
+                    
+                    window.location.href = intentUrl;
+                } catch (error) {
+                    console.error('Android calendar error:', error);
+                    fallbackCalendar();
+                }
+            } 
+            // Desktop or unknown devices
+            else {
+                fallbackCalendar();
+            }
+            
+            function fallbackCalendar() {
+                const isEnglish = document.body.classList.contains('english-mode');
+                alert(isEnglish ? 
+                    'Could not detect device calendar. Please use Google Calendar or download the iCal file.' : 
+                    'មិនអាចរកឃើញប្រតិទិនឧបករណ៍។ សូមប្រើ Google Calendar ឬទាញយកឯកសារ iCal។');
+            }
+        }
+    </script>
+</body>
+</html>

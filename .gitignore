@@ -1,2 +1,25 @@
+# Dependency directories
 node_modules/
+
+# IDE and Editor directories
 .codebuddy/
+.vscode/
+.idea/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Build directories
+dist/
+build/
