@@ -799,10 +799,10 @@
                 <!-- Companion Options with Visual Buttons -->
                 <div class="form-group" style="margin-top: 20px; margin-bottom: 25px; border-top: 1px dashed var(--gold); padding-top: 20px;">
                     <label class="form-label" style="font-size: 1.1em; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;"
-                           data-kh="មកម្នាក់ឯក ឬ មកជាមួយដៃគូ" 
+                           data-kh="មកម្នាក់ឯង ឬ មកជាមួយដៃគូ" 
                            data-en="Come alone or with companion">
                         <span style="font-size: 1.2em;">👥</span>
-                        <span>មកម្នាក់ឯក ឬ មកជាមួយដៃគូ</span>
+                        <span>មកម្នាក់ឯង ឬ មកជាមួយដៃគូ</span>
                     </label>
                     
                     <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
@@ -1249,7 +1249,7 @@
                 const status = data.attending ? 
                     (isEnglish ? 
                         `Attendance: ${data.attendanceStatus}\nCompanion: ${data.companion === 'alone' ? 'Alone' : 'With companion'}\nGuests: ${data.count}\nBlessing: ${data.blessing || 'None'}` : 
-                        `ស្ថានភាព: ${data.attendanceStatus}\nមក: ${data.companion === 'alone' ? 'មកម្នាក់ឯក' : 'មកជាមួយដៃគូរ'}\nចំនួន: ${data.count} នាក់\nពរជ័យ: ${data.blessing || 'មិនមាន'}`) : 
+                        `ស្ថានភាព: ${data.attendanceStatus}\nមក: ${data.companion === 'alone' ? 'មកម្នាក់ឯង' : 'មកជាមួយដៃគូរ'}\nចំនួន: ${data.count} នាក់\nពរជ័យ: ${data.blessing || 'មិនមាន'}`) : 
                     (isEnglish ? `Attendance: ${data.attendanceStatus}\nNot attending` : `ស្ថានភាព: ${data.attendanceStatus}\nមិនចូលរួម`);
                     
                 message = isEnglish ?
@@ -1296,7 +1296,7 @@
                     phone: data.phone || '',
                     attendanceStatus: data.attendanceStatus || 'មិនប្រាកដ',
                     attending: data.attending ? 'ចូលរួម' : 'មិនចូលរួម',
-                    companion: data.companion === 'alone' ? 'ម្នាក់ឯក' : 'ជាមួយដៃគូ',
+                    companion: data.companion === 'alone' ? 'ម្នាក់ឯង' : 'ជាមួយដៃគូ',
                     count: data.count || 0,
                     guestType: data.guestType || 'ភ្ញៀវទូទៅ',
                     blessing: data.blessing || '',
