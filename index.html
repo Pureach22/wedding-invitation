@@ -852,8 +852,8 @@
                            data-kh="តើអ្នកជាភ្ញៀវខាងណា?" 
                            data-en="Which side are you from?">តើអ្នកជាភ្ញៀវខាងណា?</label>
                     <select id="guestType" class="form-select">
-                        <option value="groom" data-kh="ខាងកូនកំលោះ" data-en="Groom's side">ខាងកូនកំលោះ</option>
-                        <option value="bride" data-kh="ខាងកូនក្រមុំ" data-en="Bride's side">ខាងកូនក្រមុំ</option>
+                        <option value="groom-side" data-kh="ខាងកូនកំលោះ" data-en="Groom's side">ខាងកូនកំលោះ</option>
+                        <option value="bride-side" data-kh="ខាងកូនក្រមុំ" data-en="Bride's side">ខាងកូនក្រមុំ</option>
                         <option value="groom-parents" data-kh="ខាងឪពុកម្ដាយប្រុស" data-en="Groom's parents side">ខាងឪពុកម្ដាយប្រុស</option>
                         <option value="bride-parents" data-kh="ខាងឪពុកម្ដាយស្រី" data-en="Bride's parents side">ខាងឪពុកម្ដាយស្រី</option>
                         <option value="general" data-kh="ភ្ញៀវទូទៅ" data-en="General guest">ភ្ញៀវទូទៅ</option>
@@ -894,7 +894,7 @@
         const TELEGRAM_CHAT_ID = '553809552';
         
         // Google Sheets Web App URL (Latest Khmer version)
-        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwycsEb-VBB-g1aVkP07g8bYl3vLISTtEfiLFiDAzYojWp-Tz2lxhcNBtQg4vLVeeQ9/exec';
+        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxnfxuOuhUMO9orp6HU2EQzDkjlhOGutacrl1lKUt4yh2uo8Hn_NS9W-LXpaI5266j-/exec';
         
         // Partner title mapping
         const PARTNER_TITLES = {
@@ -1283,25 +1283,19 @@
             
             if (data.type === 'blessing') {
                 sheetData = {
-                    type: 'Blessing',
                     name: data.name,
-                    message: data.blessing,
-                    timestamp: data.timestamp,
-                    language: 'Khmer'
+                    blessing: data.blessing,
+                    timestamp: data.timestamp
                 };
             } else {
                 sheetData = {
-                    type: 'Registration',
-                    fullName: data.fullName || '',
+                    name: data.fullName || '',
                     phone: data.phone || '',
-                    attendanceStatus: data.attendanceStatus || 'មិនប្រាកដ',
-                    attending: data.attending ? 'ចូលរួម' : 'មិនចូលរួម',
-                    companion: data.companion === 'alone' ? 'ម្នាក់ឯង' : 'ជាមួយដៃគូ',
-                    count: data.count || 0,
-                    guestType: data.guestType || 'ភ្ញៀវទូទៅ',
+                    attending: data.attending || false,
+                    count: data.count || (data.attending ? 1 : 0),
+                    guestType: data.guestType || 'general',
                     blessing: data.blessing || '',
-                    timestamp: new Date().toLocaleString('km-KH'),
-                    language: 'Khmer'
+                    timestamp: new Date().toLocaleString('km-KH')
                 };
             }
             
