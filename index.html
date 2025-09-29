@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="km">
 <head>
@@ -595,7 +596,7 @@
                 <div>
                     <strong data-kh="ខេត្ត កំពង់ស្ពឺ" 
                             data-en="Kampong Speu Province">ខេត្ត កំពង់ស្ពឺ</strong><br>
-                    <span data-kh="ផ្ទះខាងស្រី" 
+                    <span data-kh="គេហដ្ឋានខាងស្រី" 
                           data-en="Bride's House">ផ្ទះខាងស្រី</span>
                 </div>
             </div>
@@ -763,7 +764,11 @@
                 <label class="form-label" 
                        data-kh="ឈ្មោះពេញ" 
                        data-en="Full Name">ឈ្មោះពេញ</label>
-                <input type="text" id="guestName" class="form-input">
+                <input type="text" id="guestName" class="form-input" oninput="updateNamePreview()">
+                <div id="namePreview" style="margin-top: 10px; padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 5px; display: none;">
+                    <small data-kh="ការមើលជាមុន" data-en="Preview">ការមើលជាមុន:</small>
+                    <div id="previewText" style="font-size: 1.2em; margin-top: 5px;"></div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -847,6 +852,8 @@
                            data-kh="តើអ្នកជាភ្ញៀវខាងណា?" 
                            data-en="Which side are you from?">តើអ្នកជាភ្ញៀវខាងណា?</label>
                     <select id="guestType" class="form-select">
+                        <option value="groom" data-kh="ខាងកូនកំលោះ" data-en="Groom's side">ខាងកូនកំលោះ</option>
+                        <option value="bride" data-kh="ខាងកូនក្រមុំ" data-en="Bride's side">ខាងកូនក្រមុំ</option>
                         <option value="groom-parents" data-kh="ខាងឪពុកម្ដាយប្រុស" data-en="Groom's parents side">ខាងឪពុកម្ដាយប្រុស</option>
                         <option value="bride-parents" data-kh="ខាងឪពុកម្ដាយស្រី" data-en="Bride's parents side">ខាងឪពុកម្ដាយស្រី</option>
                         <option value="general" data-kh="ភ្ញៀវទូទៅ" data-en="General guest">ភ្ញៀវទូទៅ</option>
@@ -1041,7 +1048,42 @@
         function updatePartnerTitle() {
             const title = document.getElementById('titleSelect').value;
             if (title && PARTNER_TITLES[title]) {
-                // This function is for future use if needed
+                updateNamePreview();
+            }
+        }
+
+        function updateNamePreview() {
+            const title = document.getElementById('titleSelect').value;
+            const name = document.getElementById('guestName').value.trim();
+            const previewDiv = document.getElementById('namePreview');
+            const previewText = document.getElementById('previewText');
+            const companion = document.querySelector('input[name="companion"]:checked').value;
+            const isEnglish = document.body.classList.contains('english-mode');
+            
+            if (name) {
+                let fullName = '';
+                if (title) {
+                    // Use English titles in English mode, Khmer titles in Khmer mode
+                    const titleMap = isEnglish ? 
+                        {'លោក': 'Mr.', 'លោកស្រី': 'Mrs.', 'ឯកឧត្តម': 'H.E.', 'ឧកញ៉ា': 'Hon.'} : 
+                        {'លោក': 'លោក', 'លោកស្រី': 'លោកស្រី', 'ឯកឧត្តម': 'ឯកឧត្តម', 'ឧកញ៉ា': 'ឧកញ៉ា'};
+                    fullName = `${titleMap[title] || title} ${name}`;
+                } else {
+                    fullName = name;
+                }
+                
+                if (companion === 'with-companion' && title) {
+                    if (isEnglish && PARTNER_TITLES_EN[title]) {
+                        fullName += ` ${PARTNER_TITLES_EN[title]}`;
+                    } else if (!isEnglish && PARTNER_TITLES[title]) {
+                        fullName += ` ${PARTNER_TITLES[title]}`;
+                    }
+                }
+                
+                previewText.textContent = fullName;
+                previewDiv.style.display = 'block';
+            } else {
+                previewDiv.style.display = 'none';
             }
         }
         
